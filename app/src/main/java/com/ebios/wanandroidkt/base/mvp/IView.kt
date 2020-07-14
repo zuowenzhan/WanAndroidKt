@@ -1,4 +1,4 @@
-package com.xing.wanandroid.base.mvp
+package com.ebios.wanandroidkt.base.mvp
 
 interface IView {
 

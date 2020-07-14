@@ -1,8 +1,9 @@
-package com.xing.wanandroid.http
+package com.ebios.wanandroidkt.net
 
 import android.widget.Toast
+import com.ebios.wanandroidkt.base.MyApplication
 import com.google.gson.JsonParseException
-import com.xing.wanandroid.app.MainApp
+
 import org.apache.http.conn.ConnectTimeoutException
 import org.json.JSONException
 import retrofit2.HttpException
@@ -56,7 +57,7 @@ class ExceptionHandler {
             } else {
                 errorMsg = "网络链接异常，请稍后重试"
             }
-            Toast.makeText(MainApp.getContext(), errorMsg, Toast.LENGTH_LONG).show()
+            Toast.makeText(MyApplication.getContext(), errorMsg, Toast.LENGTH_LONG).show()
         }
 
         private fun handleServerException(errorCode: Int) {

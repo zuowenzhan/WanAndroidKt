@@ -1,6 +1,7 @@
-package com.xing.wanandroid.base.mvp
+package com.ebios.wanandroidkt.base.mvp
 
-import com.xing.wanandroid.base.BaseFragment
+import com.ebios.wanandroidkt.base.BaseFragment
+
 
 abstract class BaseMVPFragment<in V : IView, P : IPresenter<in V>> : BaseFragment(), IView {
 

@@ -1,4 +1,4 @@
-package com.xing.wanandroid.base
+package com.ebios.wanandroidkt.base
 
 data class BaseResponse<T>(
     var data: T?,

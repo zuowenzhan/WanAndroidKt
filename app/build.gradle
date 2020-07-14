@@ -3,15 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.0"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.ebios.wanandroidkt"
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -34,4 +34,26 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    api rootProject.ext.dependencies['design']
+    api rootProject.ext.dependencies['recyclerview']
+    api rootProject.ext.dependencies['gson']
+    api rootProject.ext.dependencies['retrofit']
+    api rootProject.ext.dependencies['rxandroid']
+    api rootProject.ext.dependencies['rxjava']
+    api rootProject.ext.dependencies['converter-gson']
+    api rootProject.ext.dependencies['adapter-rxjava']
+    api rootProject.ext.dependencies['okhttp']
+    api rootProject.ext.dependencies['logging-interceptor']
+    api rootProject.ext.dependencies['fastjson']
+    api rootProject.ext.dependencies['recycler-adapter-helper']
+    api rootProject.ext.dependencies['glide']
+    annotationProcessor rootProject.ext.dependencies['glide-compiler']
+
+    //
+    api rootProject.ext.dependencies['statusbar-util']
+    api rootProject.ext.dependencies['retrofit-cookie']
+
+
 }

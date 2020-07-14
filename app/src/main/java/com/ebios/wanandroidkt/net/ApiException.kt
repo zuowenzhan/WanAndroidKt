@@ -1,4 +1,3 @@
 package com.ebios.wanandroidkt.net
 
-class ApiException {
-}
+data class ApiException(var errCode:Int,var errMsg: String):Exception()

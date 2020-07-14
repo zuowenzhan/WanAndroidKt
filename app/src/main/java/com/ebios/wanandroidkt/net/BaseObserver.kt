@@ -1,8 +1,10 @@
-package com.xing.wanandroid.http
+package com.ebios.wanandroidkt.net
 
 import android.util.Log
-import com.xing.wanandroid.base.BaseResponse
-import com.xing.wanandroid.base.mvp.IView
+import com.ebios.wanandroidkt.base.BaseResponse
+import com.ebios.wanandroidkt.base.mvp.IView
+
+
 import io.reactivex.observers.DisposableObserver
 
 abstract class BaseObserver<T> : DisposableObserver<BaseResponse<T>> {

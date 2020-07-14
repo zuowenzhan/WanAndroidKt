@@ -1,6 +1,7 @@
-package com.xing.wanandroid.http
+package com.ebios.wanandroidkt.http
 
-import com.xing.wanandroid.utils.logInterceptor
+import com.ebios.wanandroidkt.base.MyApplication
+
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -10,7 +11,7 @@ import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersisto
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
 import com.franmontiel.persistentcookiejar.ClearableCookieJar
-import com.xing.wanandroid.app.MainApp
+import okhttp3.logging.HttpLoggingInterceptor
 
 
 class RetrofitClient {
@@ -25,8 +26,8 @@ class RetrofitClient {
             .readTimeout(10, TimeUnit.SECONDS)
             .sslSocketFactory(SSLSocketClient.getSSLSocketFactory())
             .hostnameVerifier(SSLSocketClient.getHostnameVerifier())
-            .addInterceptor(logInterceptor())
-            .cookieJar(MainApp.getInstance().getPersistentCookieJar())
+            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+            .cookieJar(MyApplication.getInstance().getPersistentCookieJar())
 //            .addInterceptor()
             .build()
         retrofit = Retrofit.Builder()

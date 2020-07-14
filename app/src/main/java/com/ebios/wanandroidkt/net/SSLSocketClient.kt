@@ -1,4 +1,4 @@
-package com.xing.wanandroid.http
+package com.ebios.wanandroidkt.http
 
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
