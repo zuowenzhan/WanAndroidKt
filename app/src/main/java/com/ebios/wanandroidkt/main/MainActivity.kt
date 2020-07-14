@@ -1,7 +1,8 @@
-package com.ebios.wanandroidkt
+package com.ebios.wanandroidkt.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ebios.wanandroidkt.R
 
 class MainActivity : AppCompatActivity() {
 

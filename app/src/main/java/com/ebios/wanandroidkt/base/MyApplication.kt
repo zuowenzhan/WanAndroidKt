@@ -8,6 +8,17 @@ import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersisto
 
 class MyApplication: Application() {
 
+//    git add .
+//    git commit -m '本次提交描述'
+//    git push
+
+//    git commit -am  '本次提交描述'
+//    git push
+
+    //git commit -am '提交的信息' && git push
+
+
+
     //获取cookie
     private lateinit var cookieJar: PersistentCookieJar
     //单例

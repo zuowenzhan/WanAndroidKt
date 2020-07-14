@@ -54,6 +54,6 @@ dependencies {
     //
     api rootProject.ext.dependencies['statusbar-util']
     api rootProject.ext.dependencies['retrofit-cookie']
-
+    api rootProject.ext.dependencies['lottie']
 
 }
