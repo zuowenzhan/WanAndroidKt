@@ -17,7 +17,7 @@ class MyApplication: Application() {
 
     //git commit -am '提交的信息' && git push
 
-
+//git push -u origin master
 
     //获取cookie
     private lateinit var cookieJar: PersistentCookieJar
