@@ -1,7 +1,6 @@
 package com.ebios.wanandroidkt.main
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import android.Manifest
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
@@ -12,15 +11,12 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.ebios.wanandroidkt.R
 import com.ebios.wanandroidkt.base.mvp.BaseMVPActivity
-import com.ebios.wanandroidkt.base.mvp.BaseMVPFragment
-import com.ebios.wanandroidkt.common.FragmentItem
 import com.ebios.wanandroidkt.gank.GankFragment
 import com.ebios.wanandroidkt.home.HomeFragment
 import com.ebios.wanandroidkt.project.ProjectFragment
 import com.ebios.wanandroidkt.system.SystemFragment
-import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
-import com.jaeger.library.StatusBarUtil
+import com.yanzhenjie.permission.AndPermission
 import kotlin.system.exitProcess
 
 class MainActivity : BaseMVPActivity<MainContract.View, MainPresenter>(), MainContract.View {
@@ -74,21 +70,31 @@ class MainActivity : BaseMVPActivity<MainContract.View, MainPresenter>(), MainCo
         }
         // 默认选中第 0 个
         mainViewPager.currentItem = 0
-        changeTabView(mainTabLayout.getTabAt(0), 22f, true)
+        changeTabView(mainTabLayout.getTabAt(0), 18f, true)
 
         mainTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                changeTabView(tab, 18f, false)
+                changeTabView(tab, 16f, false)
             }
 
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                changeTabView(tab, 22f, true)
+                changeTabView(tab, 18f, true)
 
             }
         })
+
+        //获取权限  读取sd卡  读取地址  获取照相机  获取地理位置android.permission.
+        AndPermission.with(this@MainActivity)
+            .requestCode(101)
+            .permission(
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA,
+                Manifest.permission.INTERNET,
+                Manifest.permission.READ_PHONE_STATE
+            ).send()
 
 
     }
