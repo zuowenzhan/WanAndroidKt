@@ -6,6 +6,7 @@ import com.ebios.wanandroidkt.home.bean.ArticleResponse
 import com.ebios.wanandroidkt.home.bean.Banner
 import com.ebios.wanandroidkt.project.bean.ProjectResponse
 import com.ebios.wanandroidkt.project.bean.ProjectTab
+import com.ebios.wanandroidkt.system.bean.SystemCategory
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -28,5 +29,10 @@ interface ApiService {
 
     @GET("project/list/{page}/json")
     fun getProjectLists(@Path("page") page: Int, @Query("cid") cid: Int): Observable<BaseResponse<ProjectResponse>>
+
+    @GET("tree/json")
+    fun getSystem(): Observable<BaseResponse<List<SystemCategory>>>
+    @GET("article/list/{page}/json")
+    fun getSystemArticles(@Path("page") page: Int, @Query("cid") cid: Int): Observable<BaseResponse<ArticleResponse>>
 
 }

@@ -16,6 +16,7 @@ import com.ebios.wanandroidkt.home.HomeFragment
 import com.ebios.wanandroidkt.project.ProjectFragment
 import com.ebios.wanandroidkt.system.SystemFragment
 import com.google.android.material.tabs.TabLayout
+import com.jaeger.library.StatusBarUtil
 import com.yanzhenjie.permission.AndPermission
 import kotlin.system.exitProcess
 
@@ -37,7 +38,7 @@ class MainActivity : BaseMVPActivity<MainContract.View, MainPresenter>(), MainCo
     override fun initView() {
 
         drawerLayout = findViewById(R.id.dl_drawer_layout)
-        //StatusBarUtil.setColorForDrawerLayout(this, drawerLayout, resources.getColor(R.color.colorPrimary), 0)
+       // StatusBarUtil.setColorForDrawerLayout(this, drawerLayout, resources.getColor(R.color.colorPrimary), 0)
         mainMenu = findViewById(R.id.iv_main_menu)
         mainSearch = findViewById(R.id.iv_main_search)
         mainTabLayout = findViewById(R.id.tl_main_tab)
